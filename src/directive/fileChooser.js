@@ -14,6 +14,7 @@ app.directive('fileChooser', function() {
 
       fileInput.bind('change', function(event) {
         var files = event.target.files;
+        if (!files) return;
         var file = files[0];
         scope.path = file ? file.path : undefined;
         scope.$apply();
