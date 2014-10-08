@@ -1,0 +1,50 @@
+<a class="btn btn-lg btn-primary" ng-click="Runner.start()" ng-hide="Runner.running">Start tunneling</a>
+<a class="btn btn-lg btn-success" ng-click="Runner.stop()" ng-show="Runner.running">Stop tunneling</a>
+
+<hr>
+
+<h3>Port forwardings</h3>
+
+<div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Type</th>
+      <th>Bind-Addr</th>
+      <th>Port</th>
+      <th>Host</th>
+      <th>Port</th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="f in Config.Forwardings track by $index">
+      <td style="width: 120px">
+        <select ng-options="val as name for (val, name) in tunnelTypes" ng-model="f.type" class="form-control"></select>
+      </td>
+      <td>
+        <input type="text" class="form-control" ng-model="f.bindAddr">
+      </td>
+      <td style="width: 100px">
+        <input type="number" class="form-control" min="1" ng-model="f.srcPort">
+      </td>
+      <td>
+        <input type="text" class="form-control" ng-model="f.host">
+      </td>
+      <td style="width: 100px">
+        <input type="number" class="form-control" min="1" ng-model="f.destPort">
+      </td>
+      <td class="text-right">
+        <a class="btn btn-sm btn-danger" ng-click="removeForwarding($index)"><i class="glyphicon glyphicon-trash"></i></a>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-right">
+        <a class="btn btn-sm btn-success" ng-click="addForwarding()"><i class="glyphicon glyphicon-plus"></i></a>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

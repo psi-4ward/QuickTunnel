@@ -1,0 +1,7 @@
+/.idea/
+/bower_components/
+/build/
+/cache/
+/dist/
+/node_modules/
+/tmp/

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Easy SSH Tunnel</title>
+
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body ng-app="app" ng-csp ng-cloak ng-class="{running: Runner.running}">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active"><a ui-sref="tunnel">Tunnel</a></li>
+        <li ui-sref-active="active"><a ui-sref="console">Console</a></li>
+        <li ui-sref-active="active"><a ui-sref="config">Config</a></li>
+        <li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+        <li><a href="" ng-click="exit()">Exit</a></li>
+      </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="alert alert-danger" ng-show="Runner.error">{{Runner.error}}</div>
+  <div ui-view></div>
+</div>
+
+<script src="libs.js"></script>
+<script src="app.js"></script>
+
+
+<script src="http://localhost:35729/livereload.js" id="livereload"></script>
+
+</body>
+</html>

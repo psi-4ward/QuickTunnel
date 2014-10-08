@@ -1,0 +1,23 @@
+{
+  "name": "QuickTunnel",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "commander": "~2.3.0",
+    "connect-livereload": "~0.4.0",
+    "del": "^0.1.3",
+    "express": "~4.9.5",
+    "gulp": "~3.8.8",
+    "gulp-concat": "~2.4.1",
+    "gulp-insert": "^0.4.0",
+    "gulp-jshint": "~1.8.5",
+    "gulp-less": "^1.3.6",
+    "gulp-livereload": "~2.1.1",
+    "jshint-stylish": "~1.0.0",
+    "node-webkit-builder": "^0.1.3",
+    "run-sequence": "^1.0.1",
+    "tiny-lr": "~0.1.4"
+  },
+  "author": "Christoph Wiechert <wio@psitrax.de>",
+  "license": "LGPL"
+}
