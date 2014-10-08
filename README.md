@@ -4,9 +4,9 @@ Light platform independet GUI for establishing SSH tunnels using `ssh` cli or pu
 
 Base on Node-WebKit and AngularJS
 
-![Screenshot1](doc/QuckTunnel1.png)
+![Screenshot1](doc/QuickTunnel1.png)
 
-![Screenshot2](doc/QuckTunnel2.png)
+![Screenshot2](doc/QuickTunnel2.png)
 
 ## Build
 * Install build system: `npm install`
