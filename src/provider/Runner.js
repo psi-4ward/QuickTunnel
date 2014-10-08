@@ -34,6 +34,15 @@ app.factory('Runner', function(Cfg, $rootScope) {
     return args;
   }
 
+  function validateConfig() {
+    var isValid = Cfg.config.Host.host && Cfg.config.Host.port && Cfg.config.Host.user && Cfg.config.Host.privateKeyFile;
+    if (!isValid) {
+      r.running = false;
+      r.error = 'Please fill in all details in the Config tab.';
+    }
+    return isValid;
+  }
+
   var proc;
   var r = {
     running: false,
@@ -46,6 +55,8 @@ app.factory('Runner', function(Cfg, $rootScope) {
 
       var cmd = 'ssh';
       if(Cfg.isWin) cmd = 'plink.cmd';
+
+      if (!validateConfig()) return;
 
       var args = buildArgs();
       r.console = '$ ' +cmd + ' ' + args.join(' ') + '\n';
