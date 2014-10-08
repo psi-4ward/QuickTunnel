@@ -32,6 +32,8 @@ var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 var less = require('gulp-less');
 var insert = require('gulp-insert');
+var sourcemaps = require('gulp-sourcemaps');
+
 var del = require('del');
 var NwBuilder = require('node-webkit-builder');
 var runSequence = require('run-sequence');
@@ -70,8 +72,10 @@ gulp.task('jshint', function() {
 /* Concat app */
 gulp.task('app', function() {
   return gulp.src([src + 'app.js', src + '**/*.js', '!' + src + 'node_modules/**/*'])
-    .pipe(concat('app.js'))
-    .pipe(insert.wrap('!function(){ "use strict";'+"\n", "\n}();"))
+    .pipe(sourcemaps.init())
+      .pipe(concat('app.js'))
+      .pipe(insert.wrap('!function(){ "use strict";'+"\n", "\n}();"))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(dist))
 });
 

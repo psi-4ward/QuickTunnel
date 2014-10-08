@@ -19,5 +19,8 @@
     "tiny-lr": "~0.1.4"
   },
   "author": "Christoph Wiechert <wio@psitrax.de>",
-  "license": "LGPL"
+  "license": "LGPL",
+  "devDependencies": {
+    "gulp-sourcemaps": "^1.2.2"
+  }
 }
