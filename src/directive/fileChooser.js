@@ -1,11 +1,14 @@
 app.directive('fileChooser', function() {
+
   return {
     restrict: 'E',
     scope: {
       path: '='
     },
-    template: '<a class="btn btn-default">{{path || "choose a file"}}</a><input type="file">',
+    templateUrl: 'templates/fileChooser.html',
     link: function(scope, el) {
+      scope.path = '~/.ssh/id_rsa';
+
       var fileInput = el.find('input');
       el.find('a').bind('click', fileInput[0].click.bind(fileInput[0]));
 
